@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-stone-50 text-navy font-sans antialiased;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-sand text-navy font-medium px-5 py-2.5 rounded-full text-sm
+           hover:bg-sand-light transition-colors duration-200 disabled:opacity-40
+           disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply border border-navy/20 text-navy/70 font-medium px-5 py-2.5 rounded-full text-sm
+           hover:border-navy/40 hover:text-navy transition-colors duration-200;
+  }
+
+  .chat-bubble-user {
+    @apply bg-navy text-white rounded-2xl rounded-br-sm px-4 py-3 text-sm leading-relaxed max-w-[80%] ml-auto;
+  }
+
+  .chat-bubble-ai {
+    @apply bg-white border border-stone-200 text-navy rounded-2xl rounded-bl-sm px-4 py-3 text-sm leading-relaxed max-w-[85%];
+  }
+
+  .score-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-stone-200 overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .typing-dot {
+    @apply w-1.5 h-1.5 rounded-full bg-sand;
+    animation: typing-bounce 1.4s ease-in-out infinite;
+  }
+
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
