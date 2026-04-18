@@ -1,8 +1,7 @@
-import 'dotenv/config';
+import { fileURLToPath } from 'url';
+import path from 'path';
 import express from 'express';
 import cors from 'cors';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import propertiesRouter from './routes/properties.js';
 import chatRouter from './routes/chat.js';
 import propertyChatRouter from './routes/property-chat.js';
